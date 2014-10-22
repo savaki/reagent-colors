@@ -1,0 +1,255 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+svg {
+    font-family: sans-serif;
+}
+
+svg.marbles .marble-line {
+    stroke: #aaa;
+    stroke-width: 1px;
+}
+
+svg.marbles .marble {
+    stroke-width: 4px;
+}
+
+svg.marbles .marble text {
+    fill: #222;
+    stroke: none;
+}
+
+svg.marbles .curr-value.marble {
+    stroke: #aaa;
+    fill: #eee;
+}
+
+.streams {
+    background: #eee;
+    padding: 20px 0;
+}
+
+.marble-stream {
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.marble-stream h2 {
+    margin: 0 0 -15px 0;
+    color: #444;
+    font-style: italic;
+}
+
+input[type=range], input[type=range]::-webkit-slider-thumb, #send-color, #change-color {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+body {
+    font-family: 'Rokkitt', serif;
+}
+
+.container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=range] {
+    height: 2px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    outline: 0;
+    background: #aaa;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    width: 12px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #999;
+    cursor: ew-resize;
+    position: relative;
+}
+
+.text-input {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.text-input input, .text-input .label {
+    display: flex;
+    width: 100%;
+}
+
+.text-input .label {
+    margin-top: 3rem;
+    padding-left: 5px;
+    padding-top: 0.2em;
+    /*background-color: #ddd;*/
+    border-bottom: 3px dashed #222;
+}
+
+.text-input input, .text-input .label {
+    font-size: 26pt;
+    line-height: 1;
+}
+
+.summing-sliders section.sum {
+    display: flex;
+    float: right;
+    font-size: 36pt;
+    text-align: right;
+}
+
+.summing-sliders section.sum .label {
+    margin-right: 0.5em;
+    min-width: 1em;
+}
+
+.summing-sliders .notation {
+    font-size: 36pt;
+    margin: 0 0.5em;
+    width: 1em;
+    text-align: right;
+}
+
+.summing-sliders .slider.b .label {
+    margin-left: 0;
+    min-width: 1em;
+}
+
+.explain {
+    padding: 0 20px;
+}
+
+.explain h1 {
+    font-size: 28pt;
+}
+
+.explain p {
+    font-size: 20pt;
+}
+
+.explain p.source {
+    font-size: 14pt;
+}
+
+.pub-explain p {
+    margin-top: 4em;
+    font-size: 16pt;
+    text-align: center;
+}
+
+#send-color, #change-color {
+    -webkit-font-smoothing: antialiased;
+    border-radius: 0;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0.75em 1em;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+}
+
+#send-color:hover, #change-color:hover {
+    color: white;
+}
+
+#send-color {
+    font-size: 30pt;
+    display: block;
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+    margin: 2em auto 1em auto;
+}
+
+#change-color {
+    font-size: 18pt;
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+    display: block;
+    margin: 0 auto;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #111;
+    margin-bottom: 2rem;
+}
+
+header a {
+    text-decoration: inherit;
+    color: #444;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0.2em 20px;
+    color: #eee;
+    font-size: 28pt;
+}
+
+body > div {
+    margin: 50px 0;
+}
+
+.stream-visualizations {
+    margin-top: 4rem;
+    background-color: #e3ecfd;
+}
+
+.stream-visualizations h1 {
+    padding: 0.5em 0 0.5em 20px;
+    background: #3c7cf1;
+    color: #e3ecfd;
+}
+
+section.slider {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    width: 100%;
+}
+
+section.slider input[type="range"] {
+    width: 100%;
+    margin: 0em 0.5em;
+}
+
+section.slider span.label {
+    font-size: 36pt;
+    margin: 0 0.5em;
+    min-width: 2.5em;
+    text-align: right;
+}
