@@ -21,7 +21,7 @@
 
 ;--- messaging -----------------------------------------------------------------------------------
 
-(defn receive-message [message]
+(defn receive-color [message]
   (println "receiving =>" message))
 
 (defn send-color []
@@ -44,7 +44,7 @@
   (println "booting application")
   (let [publish-key "pub-c-0929351a-e2cf-4d06-8f41-2e4b682e7490"
         subscribe-key "sub-c-493cca24-59fb-11e4-a91d-02ee2ddab7fe"]
-    (pubnub/initialize publish-key subscribe-key receive-message)))
+    (pubnub/initialize publish-key subscribe-key receive-color)))
 
 (def app-view-with-callback
   (with-meta app-view
