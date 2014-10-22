@@ -9,18 +9,31 @@
   :plugins [[lein-environ "0.5.0"]
             [lein-cljsbuild "1.0.3"]]
 
-  :cljsbuild {:builds [{:id "dev"
-                        :source-paths ["src"]
+  :cljsbuild {:builds [{:id "dev-pub"
+                        :source-paths ["src-pub"]
                         :compiler {:optimizations :none
-                                   :output-to "public/dev/app.js"
-                                   :output-dir "public/dev/"
+                                   :output-to "public/dev-pub/app.js"
+                                   :output-dir "public/dev-pub/"
                                    :pretty-print true
                                    :source-map true}}
-                       {:id "prod"
-                        :source-paths ["src"]
+                       {:id "prod-pub"
+                        :source-paths ["src-pub"]
                         :compiler {:optimizations :advanced
-                                   :output-to "public/js/app.js"
-                                   :output-dir "public/js/"
+                                   :output-to "public/js-pub/app.js"
+                                   :output-dir "public/js-pub/"
+                                   :pretty-print true}}
+                       {:id "dev-sub"
+                        :source-paths ["src-sub"]
+                        :compiler {:optimizations :none
+                                   :output-to "public/dev-sub/app.js"
+                                   :output-dir "public/dev-sub/"
+                                   :pretty-print true
+                                   :source-map true}}
+                       {:id "prod-sub"
+                        :source-paths ["src-sub"]
+                        :compiler {:optimizations :advanced
+                                   :output-to "public/js-sub/app.js"
+                                   :output-dir "public/js-sub/"
                                    :pretty-print true}}
                        ]}
 

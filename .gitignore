@@ -5,5 +5,8 @@
 /*.ipr
 
 # ignore generated files
-/public/dev
+/public/dev-pub
+/public/dev-sub
+/public/js-pub
+/public/js-sub
 /.lein-env
