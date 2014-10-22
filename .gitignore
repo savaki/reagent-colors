@@ -1,0 +1,9 @@
+# ignore intellij files
+/.idea
+/*.iml
+/*.iws
+/*.ipr
+
+# ignore generated files
+/public/dev
+/.lein-env
