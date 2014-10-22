@@ -12,12 +12,16 @@
 
 (def rng (rng/rng))
 
-(defn random-color-value []
-  (rng/int rng 256))
+(defn random-hex-color []
+  (let [a (+ (rng/int rng 12) 4)
+        b (+ (rng/int rng 12) 4)]
+    (str (.toString a 16)
+      (.toString b 16))))
 
 (defn different-color []
-  (reset! color [(random-color-value) (random-color-value) (random-color-value)])
-  (println "new color =>" @color))
+  (let [new-color (str "#" (random-hex-color) (random-hex-color) (random-hex-color))]
+    (println "new color => #" new-color)
+    (reset! color new-color)))
 
 ;--- messaging -----------------------------------------------------------------------------------
 
@@ -37,8 +41,8 @@
   [:div.pub-explain [:p "You're sending colors to " [:a {:href "sub.html" :target "frp-sub"} "here"]]])
 
 (defn app-view []
-  [:div.main [buttons-view]
-   [explain-view]])
+  [:div.main {:style {:background-color @color}} [:div.container [buttons-view]
+                                                  [explain-view]]])
 
 (defn app-boot []
   (println "booting application")
