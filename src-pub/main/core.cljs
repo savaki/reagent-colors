@@ -6,20 +6,23 @@
 
 (enable-console-print!)
 
-(def color (atom [0 0 0]))
+(def color (atom "#ffffff"))
 
 ;--- different color -----------------------------------------------------------------------------
 
 (def rng (rng/rng))
 
-(defn random-hex-color []
+(defn random-hex-value []
   (let [a (+ (rng/int rng 12) 4)
-        b (+ (rng/int rng 12) 4)]
+        b (rng/int rng 16)]
     (str (.toString a 16)
       (.toString b 16))))
 
+(defn random-hex-color []
+  (str "#" (random-hex-value) (random-hex-value) (random-hex-value)))
+
 (defn different-color []
-  (let [new-color (str "#" (random-hex-color) (random-hex-color) (random-hex-color))]
+  (let [new-color (random-hex-color)]
     (println "new color => #" new-color)
     (reset! color new-color)))
 

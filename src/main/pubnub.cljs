@@ -11,7 +11,7 @@
 (defn send-message [message]
   (println "sending =>" message)
   (.publish @pubnub-state (clj->js {:channel channel-name,
-                                    :message {"rgb" message}})))
+                                    :message message})))
 
 (defn initialize [publish-key subscribe-key receive-message-fn]
   (println "initializing pubnub")
