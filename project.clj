@@ -10,7 +10,7 @@
             [lein-cljsbuild "1.0.3"]]
 
   :cljsbuild {:builds [{:id "dev-pub"
-                        :libs [""] ; required by pprng
+                        :externs ["lib/pubnub-3.6.7.js"]
                         :source-paths ["src-pub", "src"]
                         :compiler {:optimizations :none
                                    :output-to "public/dev-pub/app.js"
@@ -18,7 +18,7 @@
                                    :pretty-print true
                                    :source-map true}}
                        {:id "prod-pub"
-                        :libs [""] ; required by pprng
+                        :externs ["lib/pubnub-3.6.7.js"]
                         :source-paths ["src-pub", "src"]
                         :compiler {:optimizations :advanced
                                    :output-dir "public/js-pub/"
@@ -26,7 +26,7 @@
                                    :source-map "public/js-pub/app.js.map"
                                    :pretty-print false}}
                        {:id "dev-sub"
-                        :libs [""] ; required by pprng
+                        :externs ["lib/pubnub-3.6.7.js"]
                         :source-paths ["src-sub", "src"]
                         :compiler {:optimizations :none
                                    :output-to "public/dev-sub/app.js"
@@ -34,7 +34,7 @@
                                    :pretty-print true
                                    :source-map true}}
                        {:id "prod-sub"
-                        :libs [""] ; required by pprng
+                        :externs ["lib/pubnub-3.6.7.js"]
                         :source-paths ["src-sub", "src"]
                         :compiler {:optimizations :advanced
                                    :output-dir "public/js-sub/"

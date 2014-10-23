@@ -21,6 +21,6 @@
   (println "subscribing to reagent-colors channel")
   (.subscribe @pubnub-state (clj->js {:channel channel-name,
                                       :connect #(println "Connected to" channel-name "channel")
-                                      :message (fn [m] (receive-message-fn (js->clj m)))})))
+                                      :message #(receive-message-fn (js->clj %))})))
 
 
