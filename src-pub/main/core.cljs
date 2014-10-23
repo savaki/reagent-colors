@@ -47,6 +47,8 @@
   [:div.main {:style {:background-color @color}} [:div.container [buttons-view]
                                                   [explain-view]]])
 
+;--- infra ---------------------------------------------------------------------------------------
+
 (defn app-boot []
   (println "booting application")
   (let [publish-key "pub-c-0929351a-e2cf-4d06-8f41-2e4b682e7490"
