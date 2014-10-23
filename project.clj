@@ -2,7 +2,7 @@
   :description "CHANGE-ME"
   :url "https://CHANGE-ME"
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2280"]
+                 [org.clojure/clojurescript "0.0-2371"]
                  [reagent "0.4.2"]
                  [cljs-ajax "0.2.6"]]
 
