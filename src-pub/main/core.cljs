@@ -21,9 +21,7 @@
   (str "#" (random-hex-value) (random-hex-value) (random-hex-value)))
 
 (defn different-color []
-  (let [new-color (random-hex-color)]
-    (println "new color => #" new-color)
-    (reset! color new-color)))
+  (reset! color (random-hex-color)))
 
 ;--- messaging -----------------------------------------------------------------------------------
 
