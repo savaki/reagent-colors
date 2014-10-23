@@ -20,7 +20,7 @@
 (defn random-hex-color []
   (str "#" (random-hex-value) (random-hex-value) (random-hex-value)))
 
-(defn different-color []
+(defn change-color! []
   (reset! color (random-hex-color)))
 
 ;--- messaging -----------------------------------------------------------------------------------
@@ -35,7 +35,7 @@
 
 (defn buttons-view []
   [:div.buttons [:div#send-color {:on-click #(send-color)} "send color"]
-   [:div#send-color {:on-click #(different-color)} "different color"]])
+   [:div#change-color {:on-click #(change-color!)} "different color"]])
 
 (defn explain-view []
   [:div.pub-explain [:p "You're sending colors to " [:a {:href "sub.html" :target "frp-sub"} "here"]]])
