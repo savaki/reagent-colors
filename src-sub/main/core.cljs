@@ -36,7 +36,7 @@
 
 (defn app-view []
   [:div.main {:style {:background-color @color}} [:div.container [bubbles-view]]
-   [:div.container [:div#send-color {:on-click #(reverse-step)} "Reverse Time"]]])
+   [:div.container [:div#send-color {:on-click #(reverse-step)} "reverse"]]])
 
 (defn tick []
   (swap! bubbles-state (fn [x] (map bubble-move x)))

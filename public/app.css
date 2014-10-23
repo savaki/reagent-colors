@@ -172,6 +172,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #send-color, #change-color {
+    cursor: pointer;
     -webkit-font-smoothing: antialiased;
     border-radius: 0;
     color: white;
