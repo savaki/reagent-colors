@@ -9,6 +9,8 @@
 
 (def step (atom -1))
 
+;------ bubble manipulation ------------------------------------------------
+
 (defn reverse-step []
   (if (= @step 1)
     (reset! step -1)
@@ -18,10 +20,14 @@
   {:color (get bubble :color)
    :pos (+ (get bubble :pos) @step)})
 
+;------ messaging ----------------------------------------------------------
+
 (defn receive-color [new-color]
   (swap! bubbles-state #(cons {:color new-color :pos 90} %))
   (println "bubbles =>" @bubbles-state)
   (reset! color new-color))
+
+;------ view ---------------------------------------------------------------
 
 (defn bubble-view [bubble]
   (let [color (get bubble :color)
@@ -37,6 +43,8 @@
 (defn app-view []
   [:div.main {:style {:background-color @color}} [:div.container [bubbles-view]]
    [:div.container [:div#send-color {:on-click #(reverse-step)} "reverse"]]])
+
+;------ infra --------------------------------------------------------------
 
 (defn tick []
   (swap! bubbles-state (fn [x] (map bubble-move x)))
