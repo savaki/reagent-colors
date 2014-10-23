@@ -33,9 +33,15 @@
 
 ;--- view ----------------------------------------------------------------------------------------
 
+(defn send-button []
+  [:div#send-color {:on-click #(send-color)} "send color"])
+
+(defn change-button []
+  [:div#change-color {:on-click #(change-color!)} "different color"])
+
 (defn buttons-view []
-  [:div.buttons [:div#send-color {:on-click #(send-color)} "send color"]
-   [:div#change-color {:on-click #(change-color!)} "different color"]])
+  [:div.buttons [send-button]
+   [change-button]])
 
 (defn explain-view []
   [:div.pub-explain [:p "You're sending colors to " [:a {:href "sub.html" :target "frp-sub"} "here"]]])
