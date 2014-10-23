@@ -3,7 +3,6 @@
   :url "https://CHANGE-ME"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2280"]
-                 [com.cemerick/pprng "0.0.2"]
                  [reagent "0.4.2"]
                  [cljs-ajax "0.2.6"]]
 

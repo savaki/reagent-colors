@@ -1,7 +1,6 @@
 (ns main.core
   (:require [reagent.core :as reagent :refer [atom]]
             [main.pubnub :as pubnub]
-            [cemerick.pprng :as rng]
             [ajax.core :as ajax]))
 
 (enable-console-print!)
@@ -10,13 +9,13 @@
 
 ;--- different color -----------------------------------------------------------------------------
 
-(def rng (rng/rng))
+(defn random [max]
+  (.floor js/Math (+ (* (.random js/Math) max) 1)))
 
 (defn random-hex-value []
-  (let [a (+ (rng/int rng 12) 4)
-        b (rng/int rng 16)]
-    (str (.toString a 16)
-      (.toString b 16))))
+  (let [a (+ (random 12) 4)
+        b (random 16)]
+    (str (.toString a 16) (.toString b 16))))
 
 (defn random-hex-color []
   (str "#" (random-hex-value) (random-hex-value) (random-hex-value)))
