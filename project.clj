@@ -22,9 +22,10 @@
                         :libs [""] ; required by pprng
                         :source-paths ["src-pub", "src"]
                         :compiler {:optimizations :advanced
-                                   :output-to "public/js-pub/app.js"
                                    :output-dir "public/js-pub/"
-                                   :pretty-print true}}
+                                   :output-to "public/js-pub/app.js"
+                                   :source-map "public/js-pub/app.js.map"
+                                   :pretty-print false}}
                        {:id "dev-sub"
                         :libs [""] ; required by pprng
                         :source-paths ["src-sub", "src"]
@@ -37,9 +38,10 @@
                         :libs [""] ; required by pprng
                         :source-paths ["src-sub", "src"]
                         :compiler {:optimizations :advanced
-                                   :output-to "public/js-sub/app.js"
                                    :output-dir "public/js-sub/"
-                                   :pretty-print true}}
+                                   :output-to "public/js-sub/app.js"
+                                   :source-map "public/js-sub/app.js.map"
+                                   :pretty-print false}}
                        ]}
 
   :min-lein-version "2.0.0")
